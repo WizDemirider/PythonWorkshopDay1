@@ -1,5 +1,6 @@
 # first of all import the socket library 
-import socket                
+import socket      
+import datetime          
   
 # next create a socket object 
 s = socket.socket()          
@@ -23,14 +24,14 @@ print("socket is listening")
   
 # a forever loop until we interrupt it or  
 # an error occurs 
-while True: 
+while True:
   
    # Establish connection with client. 
    c, addr = s.accept()      
    print('Got connection from', addr)
   
    # send a thank you message to the client.  
-   c.send('Thank you for connecting'.encode('utf-8')) 
+   c.send(str(datetime.date.today()).encode('utf-8')) 
   
    # Close the connection with the client 
    c.close() 
